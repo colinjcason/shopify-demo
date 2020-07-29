@@ -1,11 +1,20 @@
-import { TextStyle, Page, Layout } from '@shopify/polaris';
+import { EmptyState, Page, Layout } from '@shopify/polaris';
+
+const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
 const Index = () => (
     <Page>
         <Layout>
-            <TextStyle variation='positive'>
-                Sample app
-            </TextStyle>
+            <EmptyState
+            heading='Discount your products temporarily'
+            action={{
+                content: 'Select products',
+                onAction: () => console.log('clicked')
+            }}
+            image={img}
+            >
+                <p>Select products to change their price</p>
+            </EmptyState>
         </Layout>
     </Page>
 );
